@@ -5,11 +5,12 @@
   "type": "module",
   "homepage": "https://jkglobalitsolutions.github.io/sonagiri-static/",
 
-  "scripts": {
+   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "clean-deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "emailjs-com": "^3.2.0",
