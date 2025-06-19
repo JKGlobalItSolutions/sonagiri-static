@@ -14,6 +14,12 @@ import marketingImg from "../assets/services/marketingImg.jpg";
 import openHouseImg from "../assets/services/openHouseImg.jpg";
 import leadImg from "../assets/services/leadImg.jpg";
 
+// WHAT WE OFFER
+
+import ownerImg from "../assets/services/owner.jpg";
+import rentalsImg from "../assets/services/rental.jpg";
+import tenant from "../assets/services/tenant.jpg";
+
 const Home = () => {
   const [startCount, setStartCount] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -121,7 +127,6 @@ const Home = () => {
           backgroundImage: `url(${banner})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          marginTop: "110px",
         }}
       >
         <div className="bg-dark bg-opacity-75 py-5 px-4">
@@ -129,7 +134,8 @@ const Home = () => {
             PROPERTY MANAGEMENT <br /> FOR YOUR INDIA HOME
           </h1>
           <p className="lead">
-            Sell | <span style={{ color: "#038A5E" }}>Buy</span> | Rent | Maintain
+            Sell | <span style={{ color: "#038A5E" }}>Buy</span> | Rent |
+            Maintain
           </p>
           <Link to="/contact">
             <button
@@ -149,7 +155,7 @@ const Home = () => {
             <div key={index} className="col-md-4">
               <div>
                 <div className="display-3 mb-3">{item.emoji}</div>
-                <h1 style={{ color: "#038A5E"  }} className="fw-bold mb-2">
+                <h1 style={{ color: "#038A5E" }} className="fw-bold mb-2">
                   {startCount ? <CountUp end={item.end} duration={2} /> : "0"}+
                 </h1>
                 <p className="fw-medium">{item.label}</p>
@@ -204,11 +210,169 @@ const Home = () => {
         </div>
       </section>
 
+      {/* WHAT WE OFFER */}
+
+      <section className="py-5" style={{ backgroundColor: "#f0f8ff" }}>
+        <div className="container text-center">
+          <h2 className="fw-bold mb-5">WHAT WE OFFER</h2>
+          <div className="row g-4">
+
+            {/* Owner */}
+            <div className="col-md-4">
+              <div className="card h-100 border-0 shadow-sm">
+                <img
+                  src={ownerImg}
+                  className="card-img-top"
+                  alt="Owner"
+                  style={{ height: "250px", objectFit: "cover" }}
+                />
+               <div className="card-body p-0">
+                  <button
+                    className="btn btn-primary fw-semibold rounded-0 w-100 py-3"
+                    style={{ fontSize: "1.1rem" }}
+                  >
+                    Owner
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Rentals */}
+            <div className="col-md-4">
+              <div className="card h-100 border-0 shadow-sm">
+                <img
+                  src={rentalsImg}
+                  className="card-img-top"
+                  alt="Rentals"
+                  style={{ height: "250px", objectFit: "cover" }}
+                />
+              <div className="card-body p-0">
+                  <button
+                    className="btn btn-primary fw-semibold rounded-0 w-100 py-3"
+                    style={{ fontSize: "1.1rem" }}
+                  >
+                    Rentals
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Tenant */}
+            <div className="col-md-4">
+              <div className="card h-100 border-0 shadow-sm">
+                <img
+                  src={tenant}
+                  className="card-img-top"
+                  alt="Tenant"
+                  style={{ height: "250px", objectFit: "cover" }}
+                />
+
+                <div className="card-body p-0">
+                  <button
+                    className="btn btn-primary fw-semibold rounded-0 w-100 py-3"
+                    style={{ fontSize: "1.1rem" }}
+                  >
+                    Tenant
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+<section className="py-5" style={{ backgroundColor: '#fff' }}>
+  <div className="container text-center">
+    <h2 className="fw-bold mb-5">PLANS & PRICING</h2>
+    <div className="row g-5 justify-content-center">
+
+      {/* Silver */}
+      <div className="col-md-3">
+        <div
+          className="card border-1 shadow-sm h-100 position-relative hover-zoom "
+          style={{ transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}
+        >
+          <div className="position-absolute top-0 start-50 translate-middle badge bg-danger text-white px-4 py-2 rounded-pill shadow">
+            SILVER
+          </div>
+          <div className="card-body d-flex flex-column justify-content-center align-items-center pt-5">
+            <p className="text-muted mb-1">(1 year)</p>
+            <h2 className="text-danger fw-bold mb-1">₹ 750 <small className="fs-6">/month</small></h2>
+            <p className="mb-4">Professional management services and routine maintenance</p>
+            <button className="btn btn-outline-danger">VIEW MORE</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Gold */}
+      <div className="col-md-3">
+        <div
+          className="card border-1 shadow-sm h-100 position-relative bg-danger text-white hover-zoom "
+          style={{ transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}
+        >
+          <div className="position-absolute top-0 start-50 translate-middle badge bg-white text-danger px-4 py-2 rounded-pill shadow">
+            GOLD
+          </div>
+          <div className="card-body d-flex flex-column justify-content-center align-items-center pt-5">
+            <p className="text-white-50 mb-1">(1 year)</p>
+            <h2 className="fw-bold mb-1">₹ 1250 <small className="fs-6">/month</small></h2>
+            <p className="mb-4 text-white">Leave the problem to us and expect verified tenants in no time</p>
+            <button className="btn btn-light text-danger fw-semibold">VIEW MORE</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Diamond */}
+      <div className="col-md-3">
+        <div
+          className="card border-1 shadow-sm h-100 position-relative hover-zoom"
+          style={{ transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}
+        >
+          <div className="position-absolute top-0 start-50 translate-middle badge bg-danger text-white px-4 py-2 rounded-pill shadow">
+            DIAMOND
+          </div>
+          <div className="card-body d-flex flex-column justify-content-center align-items-center pt-5">
+            <p className="text-muted mb-1">(2 years)</p>
+            <h2 className="text-danger fw-bold mb-1">₹ 1000 <small className="fs-6">/month</small></h2>
+            <p className="mb-4">Join us and live with hassle free Maintenance & rentals</p>
+            <button className="btn btn-outline-danger">VIEW MORE</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Platinum */}
+      <div className="col-md-3">
+        <div
+          className="card border-1 shadow-sm h-100 position-relative hover-zoom"
+          style={{ transition: 'transform 0.3s ease, box-shadow 0.3s ease' }}
+        >
+          <div className="position-absolute top-0 start-50 translate-middle badge bg-danger text-white px-4 py-2 rounded-pill shadow">
+            PLATINUM
+          </div>
+          <div className="card-body d-flex flex-column justify-content-center align-items-center pt-5">
+            <p className="text-muted mb-1">(5 years)</p>
+            <h2 className="text-danger fw-bold mb-1">₹ 750 <small className="fs-6">/month</small></h2>
+            <p className="mb-4">Join us and live with hassle free Maintenance & rentals</p>
+            <button className="btn btn-outline-danger">VIEW MORE</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
       {/* How It Works */}
       <section className="py-5 text-center">
         <div className="container">
           <h2 className="fw-bold mb-3">HOW IT WORKS</h2>
-          <p className="mb-5">A simple, seamless process to manage your property stress-free</p>
+          <p className="mb-5">
+            A simple, seamless process to manage your property stress-free
+          </p>
 
           <div className="row g-4">
             {[
@@ -234,8 +398,13 @@ const Home = () => {
       <section className="container py-5">
         <div className="row mb-5 g-5">
           <div className="col-md-6">
-            <h3 className="fw-bold mb-3">Drop us a message for property management in Tiruvannamalai</h3>
-            <p>US: +1-248-275-5811 <br /> IN: +91 81096 51510 <br /> Mail: sales@Sonagiri.in</p>
+            <h3 className="fw-bold mb-3">
+              Drop us a message for property management in Tiruvannamalai
+            </h3>
+            <p>
+              US: +1-248-275-5811 <br /> IN: +91 81096 51510 <br /> Mail:
+              sales@Sonagiri.in
+            </p>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <input
@@ -280,10 +449,7 @@ const Home = () => {
                   required
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                className="btn btn-outline-success"
-              >
+              <button type="submit" className="btn btn-outline-success">
                 SEND
               </button>
             </form>
@@ -291,15 +457,18 @@ const Home = () => {
 
           <div className="col-md-6">
             <p>
-              Looking for a property management company in Tiruvannamalai to manage your home? 
-              At PropTech Solutions, we are here to help you with all of your property management needs.
+              Looking for a property management company in Tiruvannamalai to
+              manage your home? At PropTech Solutions, we are here to help you
+              with all of your property management needs.
             </p>
             <p>
-              Getting in touch with us is easy! Email us at <strong>sales@Sonagiri.in</strong>, or call{" "}
+              Getting in touch with us is easy! Email us at{" "}
+              <strong>sales@Sonagiri.in</strong>, or call{" "}
               <strong>+91 81096 51510</strong>.
             </p>
             <p>
-              If you have any specific queries, fill the form and one of our representatives will get in touch within 48 hours.
+              If you have any specific queries, fill the form and one of our
+              representatives will get in touch within 48 hours.
             </p>
           </div>
         </div>
@@ -314,7 +483,9 @@ const Home = () => {
             <div className="accordion-item" key={index}>
               <h2 className="accordion-header" id={`heading-${index}`}>
                 <button
-                  className={`accordion-button ${activeIndex === index ? "" : "collapsed"}`}
+                  className={`accordion-button ${
+                    activeIndex === index ? "" : "collapsed"
+                  }`}
                   type="button"
                   onClick={() => toggleFAQ(index)}
                 >
@@ -322,7 +493,9 @@ const Home = () => {
                 </button>
               </h2>
               <div
-                className={`accordion-collapse collapse ${activeIndex === index ? "show" : ""}`}
+                className={`accordion-collapse collapse ${
+                  activeIndex === index ? "show" : ""
+                }`}
               >
                 <div className="accordion-body">{faq.answer}</div>
               </div>

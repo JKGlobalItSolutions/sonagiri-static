@@ -3,7 +3,7 @@ import React from 'react';
 const Career = () => {
   return (
     <div className="min-vh-100 bg-light py-5 px-3 ">
-      <div className="container text-center mb-5" style={{marginTop: "110px"}}>
+      <div className="container text-center mb-5" >
         <h1 className="fw-bold mb-3" style={{ color: "#038A5E", fontSize: "2.5rem" }}>
           Join Our Team
         </h1>

@@ -49,7 +49,7 @@ const Price = () => {
 
 return (
   <div className="min-vh-100 bg-light py-5 px-3">
-    <div className="text-center mb-5"  style={{marginTop: "110px"}}>
+    <div className="text-center mb-5"  >
       <h2 className="fw-bold" style={{ color: "#038A5E", fontSize: "2.5rem" }}>
         Pricing Plans
       </h2>

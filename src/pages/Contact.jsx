@@ -59,7 +59,7 @@ const Contact = () => {
 
   return (
     <div className="bg-light py-5">
-      <div className="container text-center mb-5"  style={{marginTop: "110px"}}>
+      <div className="container text-center mb-5" >
         <h1 className="fw-bold mb-3" style={{ color: "#038A5E" }}>
           Get in Touch
         </h1>

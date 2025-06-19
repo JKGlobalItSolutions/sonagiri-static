@@ -107,6 +107,7 @@ const Service = () => {
   if (!activeForm) return null;
 
   return (
+
     <div className="mt-4 bg-light p-4 rounded shadow">
       <h3 className="h5 fw-semibold mb-4 text-capitalize">
         {activeForm} Form
@@ -255,6 +256,7 @@ const Service = () => {
         </div>
       </form>
     </div>
+    
   );
 };
 
