@@ -45,7 +45,7 @@ const Navbar = () => {
               ["/", "Home"],
               ["/about", "About"],
               ["/service", "Service"],
-              ["/price", "Price"],
+              ["/pricing", "Pricing"],
               ["/career", "Career"],
               ["/contact", "Contact"],
             ].map(([path, label]) => (
