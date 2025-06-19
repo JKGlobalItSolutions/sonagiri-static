@@ -1,6 +1,6 @@
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Footer from './components/Footer'; // ✅ Make sure this path is correct
 import Home from './pages/Home';
 import About from './pages/About';
 import Service from './pages/Service';
@@ -10,24 +10,26 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <HashRouter>
-      <div>
-        <Navbar />
+    <div>
+      <Navbar  />
+<div className=" ">
 
-        <div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/service" element={<Service />} />
-            <Route path="/pricing" element={<Price />} />
-            <Route path="/career" element={<Career />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
 
-        <Footer />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/service" element={<Service />} />
+        <Route path="/price" element={<Price />} />
+        <Route path="/career" element={<Career />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+
       </div>
-    </HashRouter>
+
+      <Footer /> {/* ✅ Add this to render the footer */}
+    </div>
   );
 }
 
