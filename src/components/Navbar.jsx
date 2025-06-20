@@ -85,29 +85,32 @@ const Navbar = () => {
                     Packers Movers
                   </Link>
                 </li>
+
                 <li>
                   <Link className="dropdown-item" to="/apartment-maintenance">
                     Apartment Maintenance
                   </Link>
                 </li>
 
-                {/* <li>
-                  <Link
-                    className="dropdown-item"
-                    to="/business-investment-plan"
-                  >
-                    Business Investment Plan
-                  </Link>
-                </li>
+                
 
                 <li>
                   <Link
                     className="dropdown-item"
-                    to="/residentialinvestmentplan"
+                    to="/RealEstate"
                   >
-                    Residential Investment Plan
+                   Real Estate
                   </Link>
-                </li> */}
+                </li>
+
+                 <li>
+                  <Link
+                    className="dropdown-item"
+                    to="/BuildingConstruction"
+                  >
+                   Builders
+                  </Link>
+                </li> 
 
                 <li>
                   <Link className="dropdown-item" to="/happyhomestay">
@@ -131,22 +134,18 @@ const Navbar = () => {
                 Properties
               </a>
               <ul className="dropdown-menu" aria-labelledby="servicesDropdown">
+
                 <li>
-                  <Link className="dropdown-item" to="/property-management">
+                  <Link className="dropdown-item" to="/PropertyListings">
                     Rental Property
                   </Link>
                 </li>
-                <li>
-                  <Link className="dropdown-item" to="/portfolio">
-                    Portfolio
-                  </Link>
-                </li>
+                
               </ul>
             </li>
 
-          
             {/* Support Dropdown */}
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle fw-semibold"
                 href="#"
@@ -165,7 +164,7 @@ const Navbar = () => {
               >
                 <li className="dropdown">
                   <p></p>
-                  <Link className="dropdown-item" to="/faq/">
+                  <Link className="dropdown-item" to="/Faqpage">
                     FAQ
                   </Link>
                 </li>
@@ -189,7 +188,7 @@ const Navbar = () => {
                 </li>
                 
               </ul>
-            </li>
+            </li> */}
 
             <li className="nav-item">
               <Link

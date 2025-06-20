@@ -403,7 +403,7 @@ const Home = () => {
             </h3>
             <p>
               US: +1-248-275-5811 <br /> IN: +91 81096 51510 <br /> Mail:
-              sales@Sonagiri.in
+              sales@Sonachala plus.in
             </p>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
@@ -463,7 +463,7 @@ const Home = () => {
             </p>
             <p>
               Getting in touch with us is easy! Email us at{" "}
-              <strong>sales@Sonagiri.in</strong>, or call{" "}
+              <strong>sales@Sonachala plus.in</strong>, or call{" "}
               <strong>+91 81096 51510</strong>.
             </p>
             <p>

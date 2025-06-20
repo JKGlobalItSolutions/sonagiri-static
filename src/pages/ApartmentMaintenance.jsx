@@ -72,7 +72,7 @@ const ApartmentMaintenance = () => {
             <p>
               The Apartment Owners Association is a community of all the
               apartment or villa owners within the complex, responsible for
-              maintaining the shared facilities and amenities. Sonagiriplays a
+              maintaining the shared facilities and amenities. Sonachala plusplays a
               crucial role in assisting with various tasks related to the
               association, including registration processes, establishing board
               members, and handling necessary documentation and bylaws.
@@ -80,7 +80,7 @@ const ApartmentMaintenance = () => {
             <p>
               Their expertise ensures timely and efficient collection of
               maintenance fees, hiring and supervising required personnel, and
-              overseeing tasks like cleaning and motor operation. Nimmadhi’s
+              overseeing tasks like cleaning and motor operation. Sonachala plus’s
               guidance streamlines the management process, ensuring a well-run
               and pleasant living environment for all residents.
             </p>
@@ -104,7 +104,7 @@ const ApartmentMaintenance = () => {
             </h6>
             <h3>Carpenter & Plumbing</h3>
             <p>
-              Sonagiriprovides excellent services in interior design,
+              Sonachala plusprovides excellent services in interior design,
               carpentry, and plumbing. Their skilled team delivers solutions to
               transform spaces, create elegant interiors, handle carpentry work,
               and ensure efficient plumbing. Whether it's remodeling, repairs,
@@ -131,7 +131,7 @@ const ApartmentMaintenance = () => {
             </h6>
             <h3>House Keeping</h3>
             <p>
-              Sonagirioffers comprehensive housekeeping services for houses,
+              Sonachala plusoffers comprehensive housekeeping services for houses,
               associations, and industries, ensuring cleanliness and hygiene.
               Their services include surface disinfection, window cleaning,
               appliance maintenance, furniture care, and outdoor area upkeep.
@@ -158,7 +158,7 @@ const ApartmentMaintenance = () => {
             </h6>
             <h3>Convenient and Seamless Payment Solutions</h3>
             <p>
-              Sonagirisimplifies the rent payment process for property owners.
+              Sonachala plussimplifies the rent payment process for property owners.
               Their modern payment methods and experienced team ensure timely
               rent collection, reminders for due dates, and follow-ups on
               outstanding amounts, ensuring consistent cash flow and peace of
@@ -184,7 +184,7 @@ const ApartmentMaintenance = () => {
             </h6>
             <h3>Reliable and Convenient Water Delivery Services</h3>
             <p>
-              Sonagirioffers efficient water supply services from lorries,
+              Sonachala plusoffers efficient water supply services from lorries,
               delivering clean, potable water for residential, commercial, and
               industrial needs. Their well-maintained fleet ensures safe
               transportation and uninterrupted supply, meeting your demands even

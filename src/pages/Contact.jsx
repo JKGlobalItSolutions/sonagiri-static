@@ -65,7 +65,7 @@ const Contact = () => {
         </h1>
         <p className="text-muted fs-5">
           We’re here to help! Whether you’re buying, selling, renting, or just
-          have a question — reach out to the Sonagiri team.
+          have a question — reach out to the Sonachala plus team.
         </p>
       </div>
 
@@ -149,7 +149,7 @@ const Contact = () => {
                 </li>
                 <li className="mb-3">
                   <strong style={{ color: "#038A5E" }}>✉️ Email:</strong>{" "}
-                  contact@sonagiriproperties.com
+                  contact@Sonachala plusproperties.com
                 </li>
                 <li className="mb-3">
                   <strong style={{ color: "#038A5E" }}>🕒 Hours:</strong> Mon - Sat:

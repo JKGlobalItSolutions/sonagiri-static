@@ -25,7 +25,7 @@ const About = () => {
         />
         <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center bg-dark bg-opacity-50">
           <h1 className="text-white display-4 fw-bold text-center px-4">
-            Welcome to Sonagiri Property Management
+            Welcome to Sonachala  plus Property Management
           </h1>
         </div>
       </section>
@@ -39,7 +39,7 @@ const About = () => {
               Who We Are
             </h2>
             <p className="lead mb-4">
-              <strong style={{ color: "#038A5E" }}>Sonagiri</strong> is a
+              <strong style={{ color: "#038A5E" }}>Sonachala plus</strong> is a
               trusted name in professional property management, offering modern,
               reliable, and stress-free solutions for residential and commercial
               property owners.
@@ -53,7 +53,7 @@ const About = () => {
           <div className="col-md-6">
             <img
               src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?auto=format&fit=crop&w=800&q=80"
-              alt="Sonagiri Management"
+              alt="Sonachala plus Management"
               className="img-fluid rounded shadow"
             />
           </div>
@@ -133,9 +133,9 @@ const About = () => {
 
         {/* CTA */}
         <div className="text-center py-5">
-          <h2 className="fw-semibold mb-3">Partner with Sonagiri</h2>
+          <h2 className="fw-semibold mb-3">Partner with Sonachala plus</h2>
           <p className="mb-4">
-            Discover smarter property management with Sonagiri. Let’s protect
+            Discover smarter property management with Sonachala plus. Let’s protect
             and grow your investment—together.
           </p>
           <Link
@@ -164,7 +164,7 @@ const About = () => {
                 Your Trusted Partner in Property Management
               </h3>
               <p>
-                With over a decade of proven excellence, Sonagiriprovides
+                With over a decade of proven excellence, Sonachala plusprovides
                 comprehensive property management services tailored to meet the
                 diverse needs of property owners, NRIs, and tenants across
                 India. Our experienced team bridges the gap between owners and

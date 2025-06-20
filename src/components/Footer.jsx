@@ -77,7 +77,7 @@ const Footer = () => {
               <FaYoutube />
             </div>
             <p className="d-flex align-items-center gap-2 text-light mb-2">
-              <FaEnvelope /> sales@Sonagiri.com
+              <FaEnvelope /> sales@Sonachala plus.com
             </p>
             <p className="d-flex align-items-center gap-2 text-light mb-2">
               <FaPhoneAlt /> US: +1-248-275-5811
@@ -92,7 +92,7 @@ const Footer = () => {
         <div className="border-top border-secondary pt-3 mt-4 text-center small text-secondary">
           <p className="mb-0">
             Copyright © 2025 by{" "}
-            <span style={{ color: "#038A5E" }}>Sonagiri</span> | All rights
+            <span style={{ color: "#038A5E" }}>Sonachala plus</span> | All rights
             reserved |{" "}
             <a href="#" className="text-info text-decoration-none">
               Terms and Conditions

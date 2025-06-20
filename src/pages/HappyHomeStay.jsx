@@ -1,6 +1,12 @@
 import React from "react";
 
 import Comfortablee  from  "../assets/services/Comfortablee.jpg";
+import Safety   from  "../assets/services/Safety.jpg";
+import Water  from  "../assets/services/Water.jpg";
+
+import Housekeeping  from  "../assets/services/Housekeeping.jpg";
+
+import Explore  from  "../assets/services/Explore.jpg";
 
 
 import {
@@ -71,7 +77,7 @@ const HappyHomeStay = () => {
       <img
         src={Comfortablee}
         alt="Live Like a Local"
-        className="img-fluid rounded"
+        className="img-fluid rounded w-50"
       />
     </div>
   </div>
@@ -90,9 +96,9 @@ const HappyHomeStay = () => {
     </div>
     <div className="col-md-5 text-center">
       <img
-        src="/your-image2.jpg"
+        src={Safety}
         alt="Security System"
-        className="img-fluid rounded"
+        className="img-fluid rounded w-50"
       />
     </div>
   </div>
@@ -110,9 +116,9 @@ const HappyHomeStay = () => {
     </div>
     <div className="col-md-5 text-center">
       <img
-        src="/your-image3.jpg"
+        src={Water}
         alt="Water Supply"
-        className="img-fluid rounded"
+        className="img-fluid rounded w-50"
       />
     </div>
   </div>
@@ -130,9 +136,9 @@ const HappyHomeStay = () => {
     </div>
     <div className="col-md-5 text-center">
       <img
-        src="/your-image4.jpg"
+        src={Housekeeping}
         alt="Clean Environment"
-        className="img-fluid rounded"
+        className="img-fluid rounded w-50"
       />
     </div>
   </div>
@@ -150,9 +156,9 @@ const HappyHomeStay = () => {
     </div>
     <div className="col-md-5 text-center">
       <img
-        src="/your-image5.jpg"
+        src={Explore}
         alt="Cultural Tourism"
-        className="img-fluid rounded"
+        className="img-fluid rounded w-50"
       />
     </div>
   </div>

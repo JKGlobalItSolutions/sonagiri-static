@@ -1,3 +1,7 @@
+import { useState } from "react";
+
+
+
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -18,10 +22,39 @@ import ApartmentMaintenance from "./pages/ApartmentMaintenance";
 import BusinessInvestmentPlan from "./pages/BusinessInvestmentPlan";
 import ResidentialInvestmentPlan from "./pages/ResidentialInvestmentPlan";
 import HappyHomeStay from "./pages/HappyHomeStay";
+import RealEstate from "./pages/RealEstate";
+import BuildingConstruction from "./pages/BuildingConstruction";
+
+// propertites inside compo
+import PropertyListings from "./pages/PropertyListings";
+
+
+
+// support inside compo
+import Faqpage from "./pages/Faqpage";
+
+
+
+
+
+
 
 import "./App.css"; // Import your CSS file
 
 function App() {
+
+
+
+
+
+
+
+  //  this is empty array to store the product data to moredata section data  share 
+
+  // const [empty, setempty] = useState([])
+
+
+
   return (
     <HashRouter>
       {" "}
@@ -46,7 +79,13 @@ function App() {
           <Route path="/plot-monitoring" element={<PlotMonitoring />} />
 
           <Route path="/packers-movers" element={<PackersMovers />} />
-          
+
+              <Route path="/RealEstate" element={<RealEstate />} />
+              <Route path="/BuildingConstruction" element={<BuildingConstruction />} />
+
+
+              BuildingConstruction
+
           <Route
             path="/business-investment-plan"
             element={<BusinessInvestmentPlan />}
@@ -64,6 +103,23 @@ function App() {
 
           <Route path="/happyhomestay" element={<HappyHomeStay />} />
         </Routes>
+
+        {/*  propertites inside compo */}
+        <Routes>
+          <Route path="/PropertyListings" element={<PropertyListings />} />
+        </Routes>
+
+
+          {/*  support inside compo */}
+ <Routes>
+          <Route path="/Faqpage" element={<Faqpage/>} />
+        </Routes>
+
+
+
+
+
+
 
         <Footer />
       </div>
