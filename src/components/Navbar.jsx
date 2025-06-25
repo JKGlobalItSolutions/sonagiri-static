@@ -92,25 +92,17 @@ const Navbar = () => {
                   </Link>
                 </li>
 
-                
-
                 <li>
-                  <Link
-                    className="dropdown-item"
-                    to="/RealEstate"
-                  >
-                   Real Estate
+                  <Link className="dropdown-item" to="/RealEstate">
+                    Real Estate
                   </Link>
                 </li>
 
-                 <li>
-                  <Link
-                    className="dropdown-item"
-                    to="/BuildingConstruction"
-                  >
-                   Builders
+                <li>
+                  <Link className="dropdown-item" to="/BuildingConstruction">
+                    Builders
                   </Link>
-                </li> 
+                </li>
 
                 <li>
                   <Link className="dropdown-item" to="/happyhomestay">
@@ -134,13 +126,11 @@ const Navbar = () => {
                 Properties
               </a>
               <ul className="dropdown-menu" aria-labelledby="servicesDropdown">
-
                 <li>
                   <Link className="dropdown-item" to="/PropertyListings">
                     Rental Property
                   </Link>
                 </li>
-                
               </ul>
             </li>
 
@@ -229,6 +219,34 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
+            {/* ------------------------ */}
+
+            <li className="nav-item">
+              <Link
+                className="nav-link fw-semibold"
+                to="/AdminPage"
+                style={{ color: "#038A5E" }}
+              >
+                AdminPage
+              </Link>
+            </li>
+
+
+  <li className="nav-item">
+              <Link
+                className="nav-link fw-semibold"
+                to="/PropertyDetails"
+                style={{ color: "#038A5E" }}
+              >
+               PropertyDetails
+              </Link>
+            </li>
+
+
+
+
+
+
           </ul>
         </div>
       </div>
