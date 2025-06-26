@@ -10,8 +10,9 @@ const Navbar = () => {
           <img
             src={navlogo}
             alt="YourLogo"
-            height="50"
-            className="d-inline-block align-text-top me-2"
+            height="100"
+            width="100px"
+            className="d-inline-block align-text-top me-2 rounded-5"
           />
           {/* Optional: Add text next to logo */}
           {/* <span className="fw-bold">Your Company Name</span> */}
@@ -75,6 +76,19 @@ const Navbar = () => {
                     Tenant Management
                   </Link>
                 </li>
+
+                <li>
+                  <Link className="dropdown-item" to="/RealEstate">
+                    Real Estate
+                  </Link>
+                </li>
+
+                <li>
+                  <Link className="dropdown-item" to="/BuildingConstruction">
+                    Builders
+                  </Link>
+                </li>
+
                 <li>
                   <Link className="dropdown-item" to="/plot-monitoring">
                     Plot Monitering
@@ -89,18 +103,6 @@ const Navbar = () => {
                 <li>
                   <Link className="dropdown-item" to="/apartment-maintenance">
                     Apartment Maintenance
-                  </Link>
-                </li>
-
-                <li>
-                  <Link className="dropdown-item" to="/RealEstate">
-                    Real Estate
-                  </Link>
-                </li>
-
-                <li>
-                  <Link className="dropdown-item" to="/BuildingConstruction">
-                    Builders
                   </Link>
                 </li>
 
@@ -128,7 +130,7 @@ const Navbar = () => {
               <ul className="dropdown-menu" aria-labelledby="servicesDropdown">
                 <li>
                   <Link className="dropdown-item" to="/PropertyListings">
-                    Rental Property
+                    Property
                   </Link>
                 </li>
               </ul>
@@ -221,7 +223,7 @@ const Navbar = () => {
             </li>
             {/* ------------------------ */}
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 className="nav-link fw-semibold"
                 to="/AdminPage"
@@ -229,24 +231,27 @@ const Navbar = () => {
               >
                 AdminPage
               </Link>
-            </li>
+            </li> */}
 
-
-  <li className="nav-item">
+            {/* <li className="nav-item">
               <Link
                 className="nav-link fw-semibold"
                 to="/PropertyDetails"
                 style={{ color: "#038A5E" }}
               >
-               PropertyDetails
+                PropertyDetails
+              </Link>
+            </li> */}
+
+            {/* Admin login */}
+            <li className="nav-item">
+              <Link
+                to="/AdminLogin"
+                className="btn btn-success px-3 py-1 fw-semibold d-flex align-items-center gap-2"
+              >
+                <i className="bi bi-person-circle"></i> Login
               </Link>
             </li>
-
-
-
-
-
-
           </ul>
         </div>
       </div>

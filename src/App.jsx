@@ -30,6 +30,7 @@ import PropertyListings from "./pages/PropertyListings";
 import Faqpage from "./pages/Faqpage";
 
 // Admin page
+import AdminLogin from "./adminpage/AdminLogin.jsx";
 import PropertyForm from "./adminpage/PropertyForm";
 import AdminPage from "./adminpage/AdminPage";
 import PropertyList from "./adminpage/PropertyList";
@@ -84,19 +85,13 @@ function App() {
             {/*  support inside compo */}
             <Route path="/Faqpage" element={<Faqpage />} />
             {/* Admin page */}
+            <Route path="/AdminLogin" element={<AdminLogin />} />
             <Route path="/PropertyForm" element={<PropertyForm />} />
             <Route path="/AdminPage" element={<AdminPage />} />
             <Route path="/PropertyList" element={<PropertyList />} />
             {/* <Route path="/PropertyDetails" element={<PropertyDetails />} /> */}
-
-
-
-<Route path="/PropertyDetails/:id" element={<PropertyDetails />} />
-
-
-
-
-
+            {/* <Route path="/PropertyDetails/:id" element={<PropertyDetails />} /> */}
+            <Route path="/PropertyDetails/:id" element={<PropertyDetails />} />
           </Routes>
 
           <Footer />
