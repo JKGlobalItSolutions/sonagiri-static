@@ -268,7 +268,6 @@
 
 // export default PropertyList;
 
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -417,16 +416,24 @@ const PropertyList = () => {
 
                 <ul className="list-unstyled text-muted small mb-2">
                   <li>
-                    📏 {property.sizeSqFt || 950} sq ft | 🛏 {property.bedrooms} Bedroom | 🛁 {property.bathrooms} Bathroom
+                    📏 {property.sizeSqFt || 950} sq ft | 🛏 {property.bedrooms}{" "}
+                    Bedroom | 🛁 {property.bathrooms} Bathroom
                   </li>
                   <li>
-                    🏢 {property.floor || "0/1"} Floor | 🌅 {property.facing || "East Facing"}
+                    🏢 {property.floor || "0/1"} Floor | 🌅{" "}
+                    {property.facing || "East Facing"}
                   </li>
                 </ul>
 
                 <p className="text-muted small mb-3">
                   <i className="bi bi-calendar-event me-1"></i>
-                  Available: {property.availabilityDate ? new Date(property.availabilityDate).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "2-digit" }) : "N/A"}
+                  Available:{" "}
+                  {property.availabilityDate
+                    ? new Date(property.availabilityDate).toLocaleDateString(
+                        "en-GB",
+                        { day: "2-digit", month: "short", year: "2-digit" }
+                      )
+                    : "N/A"}
                 </p>
 
                 {editingProperty === property._id ? (
@@ -454,8 +461,11 @@ const PropertyList = () => {
                       onChange={handleEditChange}
                       className="form-select mb-2"
                     >
-                      <option value="For Rent">For Rent</option>
-                      <option value="Rented">Rented</option>
+                      <option value="Rent">Rent</option>
+                      <option value="Buy">Buy</option>
+                      <option value="Sell">Sell</option>
+                      <option value="Lease">Lease</option>
+                      
                     </select>
                     <input
                       type="number"
