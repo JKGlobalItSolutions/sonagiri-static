@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { PropertyContext } from "../usecontext/PropertyContext"; // ✅ correct path
 
 const PropertyListings = () => {
@@ -71,6 +72,14 @@ const PropertyListings = () => {
     setSelectedProperty(property);
     navigate(`/PropertyDetails/${property._id}`);
   };
+
+
+ const location = useLocation();
+
+  // This will be true when path is "/"
+  const isHomePage = location.pathname === "/";
+
+
 
   return (
     <div className="container my-5">
@@ -150,6 +159,9 @@ const PropertyListings = () => {
         </div>
 
         {/* ADVANCED SEARCH */}
+
+{!isHomePage && (
+
         <div className="col-md-3">
           <div className="bg-info text-white p-3 rounded mb-4">
             <h5 className="fw-bold">ADVANCED SEARCH</h5>
@@ -206,6 +218,8 @@ const PropertyListings = () => {
             </form>
           </div>
         </div>
+)}
+
       </div>
     </div>
   );
