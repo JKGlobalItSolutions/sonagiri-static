@@ -26,6 +26,11 @@ import PropertyDetails from "./pages/PropertyDetails";
 // propertites inside compo
 import PropertyListings from "./pages/PropertyListings";
 
+import PropertyListingsHome from "./pages/PropertyListingsHome.jsx";
+
+
+
+
 // support inside compo
 import Faqpage from "./pages/Faqpage";
 
@@ -89,7 +94,9 @@ function App() {
             <Route path="/PropertyForm" element={<PropertyForm />} />
             <Route path="/AdminPage" element={<AdminPage />} />
             <Route path="/PropertyList" element={<PropertyList />} />
-            {/* <Route path="/PropertyDetails" element={<PropertyDetails />} /> */}
+
+            <Route path="/PropertyListingsHome" element={<PropertyListingsHome />} />
+
             {/* <Route path="/PropertyDetails/:id" element={<PropertyDetails />} /> */}
             <Route path="/PropertyDetails/:id" element={<PropertyDetails />} />
           </Routes>

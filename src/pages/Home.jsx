@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CountUp from "react-countup";
 import emailjs from "emailjs-com";
 
-import PropertyListings from "../pages/PropertyListings";
+import PropertyListingsHome from "../pages/PropertyListingsHome.jsx";
 
 // Assets
 import banner from "../assets/banner/banner.png";
@@ -416,10 +416,10 @@ const Home = () => {
         </div>
       </section>
 
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <div className="col-12">
-            <PropertyListings />
+            <PropertyListingsHome />
           </div>
         </div>
       </div>
