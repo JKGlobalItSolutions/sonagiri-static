@@ -8,28 +8,73 @@ const AdminLogin = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setErrorMsg("");
+//   const handleLogin = async (e) => {
+//     e.preventDefault();
+//     setErrorMsg("");
 
-    try {
-      const res = await axios.post("http://localhost:5000/api/admin/AdminLogin", {
-        email,
-        password,
-      });
+   
+//     //   const res = await axios.post("http://localhost:5000/api/admin/AdminLogin", {
+//     //     email,
+//     //     password,
+//     //   });
+    
+//  try {
+//     const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/admin/AdminLogin`, {
+//   email,
+//   password,
+// });
 
-      if (res.data.success) {
-        // Store token or admin session if needed
-        alert("Login successful!");
-        navigate("/AdminPage"); // Redirect to admin dashboard
-      } else {
-        setErrorMsg(res.data.message || "Login failed!");
-      }
-    } catch (err) {
-      console.error("Login Error:", err);
-      setErrorMsg("Invalid credentials or server error.");
+
+//       if (res.data.success) {
+//         // Store token or admin session if needed
+//         alert("Login successful!");
+//         navigate("/AdminPage"); // Redirect to admin dashboard
+//       } else {
+//         setErrorMsg(res.data.message || "Login failed!");
+//       }
+//     } catch (err) {
+//       console.error("Login Error:", err);
+//       setErrorMsg("Invalid credentials or server error.");
+//     }
+
+
+
+
+
+
+
+
+
+//   };
+
+
+const handleLogin = async (e) => {
+  e.preventDefault();
+  setErrorMsg("");
+
+  try {
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+    console.log("Backend URL:", BASE_URL); // ✅ for debug
+
+    const res = await axios.post(`${BASE_URL}/api/admin/AdminLogin`, {
+      email,
+      password,
+    });
+
+    if (res.data.success) {
+      alert("Login successful!");
+      navigate("/AdminPage");
+    } else {
+      setErrorMsg(res.data.message || "Login failed!");
     }
-  };
+  } catch (err) {
+    console.error("Login Error:", err);
+    setErrorMsg("Invalid credentials or server error.");
+  }
+};
+
+
+
 
   return (
     <div className="container d-flex justify-content-center align-items-center" style={{ minHeight: "90vh" }}>

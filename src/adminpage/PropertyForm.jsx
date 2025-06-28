@@ -258,6 +258,10 @@
 
 // export default PropertyForm;
 
+
+
+
+
 // ✅ Updated PropertyForm.jsx to handle multiple images
 import React, { useState } from "react";
 import axios from "axios";
@@ -316,7 +320,15 @@ const PropertyForm = () => {
     });
 
     try {
-      await axios.post("http://localhost:5000/api/properties", data);
+      await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/api/properties`,
+        data
+      );
+
+      // await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/properties`, data);
+
+      // await axios.post("http://localhost:5000/api/properties", data);
+
       alert("Property added successfully!");
       setFormData({
         title: "",

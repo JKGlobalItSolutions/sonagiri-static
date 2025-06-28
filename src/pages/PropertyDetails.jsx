@@ -14,7 +14,12 @@ const PropertyDetails = () => {
     if (!selectedProperty && id) {
       const fetchProperty = async () => {
         try {
-          const res = await axios.get(`http://localhost:5000/api/properties/${id}`);
+          // const res = await axios.get(`http://localhost:5000/api/properties/${id}`);
+          // const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/properties/${id}`);
+
+const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/properties/${id}`);
+
+
           setProperty(res.data);
         } catch (err) {
           console.error("Error loading property:", err);
@@ -63,7 +68,13 @@ const PropertyDetails = () => {
               {property.imageUrls.map((url, index) => (
                 <div key={index} className={`carousel-item ${index === activeIndex ? "active" : ""}`}>
                   <img
-                    src={`http://localhost:5000${url}`}
+                    // src={`http://localhost:5000${url}`}
+
+                    // src={`${process.env.REACT_APP_API_BASE_URL}${url}`}
+
+                    src={`${import.meta.env.VITE_API_BASE_URL}${url}`}
+
+
                     className="d-block w-100"
                     style={{ height: "400px", objectFit: "cover" }}
                     alt={`Property ${index}`}
@@ -102,7 +113,13 @@ const PropertyDetails = () => {
             {property.imageUrls.map((url, index) => (
               <img
                 key={index}
-                src={`http://localhost:5000${url}`}
+                // src={`http://localhost:5000${url}`}
+                
+                // src={`${process.env.REACT_APP_API_BASE_URL}${url}`}
+
+                src={`${import.meta.env.VITE_API_BASE_URL}${url}`}
+
+
                 alt={`Thumb ${index}`}
                 onClick={() => handleThumbnailClick(index)}
                 className={`me-2 rounded border ${index === activeIndex ? "border-primary border-3" : ""}`}

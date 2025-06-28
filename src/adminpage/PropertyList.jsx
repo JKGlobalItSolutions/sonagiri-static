@@ -289,7 +289,12 @@ const PropertyList = () => {
 
   const fetchProperties = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/properties");
+      // const res = await axios.get("http://localhost:5000/api/properties");
+      // const res = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/properties`);
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_BASE_URL}/api/properties`
+      );
+
       setProperties(res.data);
     } catch (error) {
       console.error("Error fetching properties:", error);
@@ -299,7 +304,12 @@ const PropertyList = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this property?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/properties/${id}`);
+        // await axios.delete(`http://localhost:5000/api/properties/${id}`);
+        // await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/properties/${id}`);
+        await axios.delete(
+          `${import.meta.env.VITE_API_BASE_URL}/api/properties/${id}`
+        );
+
         alert("Property deleted");
         fetchProperties();
       } catch (error) {
@@ -336,33 +346,85 @@ const PropertyList = () => {
     }));
   };
 
-  const handleEditSubmit = async (id) => {
-    try {
-      const data = new FormData();
-      data.append("title", editFormData.title);
-      data.append("price", editFormData.price);
-      data.append("status", editFormData.status);
-      data.append("bedrooms", editFormData.bedrooms);
-      data.append("bathrooms", editFormData.bathrooms);
+  
 
-      if (editFormData.images.length > 0) {
-        editFormData.images.forEach((file) => {
-          data.append("images", file);
-        });
-      }
+  // const handleEditSubmit = async (id) => {
+  //   try {
+  //     const data = new FormData();
+  //     data.append("title", editFormData.title);
+  //     data.append("price", editFormData.price);
+  //     data.append("status", editFormData.status);
+  //     data.append("bedrooms", editFormData.bedrooms);
+  //     data.append("bathrooms", editFormData.bathrooms);
 
-      await axios.put(`http://localhost:5000/api/properties/${id}`, data, {
-        headers: { "Content-Type": "multipart/form-data" },
+  //     if (editFormData.images.length > 0) {
+  //       editFormData.images.forEach((file) => {
+  //         data.append("images", file);
+  //       });
+  //     }
+
+  //     // await axios.put(`http://localhost:5000/api/properties/${id}`, data, {
+  //     //   headers: { "Content-Type": "multipart/form-data" },
+  //     // });
+
+  //     await axios.put(
+  //       `${import.meta.env.VITE_API_BASE_URL}/api/properties/${id}`,
+  //       data,
+  //       {
+  //         headers: { "Content-Type": "multipart/form-data" },
+  //       }
+  //     );
+
+  //     alert("Property updated");
+  //     setEditingProperty(null);
+  //     fetchProperties();
+  //   } catch (error) {
+  //     console.error("Error updating property:", error);
+  //     alert("Failed to update property");
+  //   }
+  // };
+
+
+
+const handleEditSubmit = async (id) => {
+  try {
+    const data = new FormData();
+    data.append("title", editFormData.title);
+    data.append("price", editFormData.price);
+    data.append("status", editFormData.status);
+    data.append("bedrooms", editFormData.bedrooms);
+    data.append("bathrooms", editFormData.bathrooms);
+
+    if (editFormData.images && editFormData.images.length > 0) {
+      editFormData.images.forEach((file) => {
+        data.append("images", file);
       });
-
-      alert("Property updated");
-      setEditingProperty(null);
-      fetchProperties();
-    } catch (error) {
-      console.error("Error updating property:", error);
-      alert("Failed to update property");
     }
-  };
+
+    // Debug: View FormData content
+    for (let pair of data.entries()) {
+      console.log(`${pair[0]}:`, pair[1]);
+    }
+
+    const res = await axios.put(
+      `${import.meta.env.VITE_API_BASE_URL}/api/properties/${id}`,
+      data,
+      {
+        headers: { "Content-Type": "multipart/form-data" },
+      }
+    );
+
+    alert("Property updated!");
+    setEditingProperty(null);
+    fetchProperties(); // Refresh list
+  } catch (error) {
+    console.error("Error updating property:", error);
+    alert("Failed to update property");
+  }
+};
+
+
+
 
   return (
     <div className="container my-5">
@@ -374,9 +436,17 @@ const PropertyList = () => {
             <div className="card h-100 shadow border-0 rounded-4">
               <div className="position-relative">
                 <img
+                  // src={
+                  //   property.imageUrls && property.imageUrls.length > 0
+                  //     ? `http://localhost:5000${property.imageUrls[0]}`
+                  //     : "https://via.placeholder.com/400x230?text=No+Image"
+                  // }
+
                   src={
                     property.imageUrls && property.imageUrls.length > 0
-                      ? `http://localhost:5000${property.imageUrls[0]}`
+                      ? `${import.meta.env.VITE_API_BASE_URL}${
+                          property.imageUrls[0]
+                        }`
                       : "https://via.placeholder.com/400x230?text=No+Image"
                   }
                   className="card-img-top rounded-top-4"
@@ -465,7 +535,6 @@ const PropertyList = () => {
                       <option value="Buy">Buy</option>
                       <option value="Sell">Sell</option>
                       <option value="Lease">Lease</option>
-                      
                     </select>
                     <input
                       type="number"

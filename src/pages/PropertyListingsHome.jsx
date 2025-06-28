@@ -12,7 +12,16 @@ const PropertyListingsHome = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/properties");
+        // const response = await axios.get("http://localhost:5000/api/properties");
+
+        // const response = await axios.get(
+        //   `${process.env.REACT_APP_API_BASE_URL}/api/properties`
+        // );
+
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_BASE_URL}/api/properties`
+        );
+
         setProperties(response.data);
       } catch (error) {
         console.error("Error fetching properties:", error);
@@ -33,7 +42,9 @@ const PropertyListingsHome = () => {
       <div className="row">
         <div className="col-md-12">
           <h2 className="mb-2">PROPERTY LISTINGS</h2>
-          <p className="text-muted mb-4">{properties.length} properties found</p>
+          <p className="text-muted mb-4">
+            {properties.length} properties found
+          </p>
 
           {loading ? (
             <p>Loading properties...</p>
@@ -49,11 +60,26 @@ const PropertyListingsHome = () => {
                   <div className="card h-100 shadow-sm border-0">
                     <div className="position-relative">
                       <img
+                        // src={
+                        //   property.imageUrls?.length > 0
+                        //     ? `http://localhost:5000${property.imageUrls[0]}`
+                        //     : "https://via.placeholder.com/400x230?text=No+Image"
+                        // }
+
+                        // src={
+                        //   property.imageUrls?.length > 0
+                        //     ? `${process.env.REACT_APP_API_BASE_URL}${property.imageUrls[0]}`
+                        //     : "https://via.placeholder.com/400x230?text=No+Image"
+                        // }
+
                         src={
                           property.imageUrls?.length > 0
-                            ? `http://localhost:5000${property.imageUrls[0]}`
+                            ? `${import.meta.env.VITE_API_BASE_URL}${
+                                property.imageUrls[0]
+                              }`
                             : "https://via.placeholder.com/400x230?text=No+Image"
                         }
+                        
                         className="card-img-top rounded-top-4"
                         alt={property.title || "Property Image"}
                         style={{ height: "230px", objectFit: "cover" }}
@@ -75,12 +101,20 @@ const PropertyListingsHome = () => {
                       </p>
                       <ul className="list-unstyled small mb-3">
                         <li>
-                          📏 {property.sizeSqFt} sq ft | 🏧 {property.bedrooms} BR | 🚱 {property.bathrooms} Bath
+                          📏 {property.sizeSqFt} sq ft | 🏧 {property.bedrooms}{" "}
+                          BR | 🚱 {property.bathrooms} Bath
                         </li>
-                        <li>🏢 {property.floor} | 🌅 {property.facing}</li>
+                        <li>
+                          🏢 {property.floor} | 🌅 {property.facing}
+                        </li>
                       </ul>
                       <p className="small text-muted">
-                        Available: {property.availabilityDate ? new Date(property.availabilityDate).toLocaleDateString() : "N/A"}
+                        Available:{" "}
+                        {property.availabilityDate
+                          ? new Date(
+                              property.availabilityDate
+                            ).toLocaleDateString()
+                          : "N/A"}
                       </p>
                       <button className="btn btn-danger btn-sm">ENQUIRE</button>
                     </div>

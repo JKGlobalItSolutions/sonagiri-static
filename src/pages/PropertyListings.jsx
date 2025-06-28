@@ -22,9 +22,19 @@ const PropertyListings = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // const response = await axios.get(
+        //   "http://localhost:5000/api/properties"
+        // );
+
+        // const response = await axios.get(
+        //   `${process.env.REACT_APP_API_BASE_URL}/api/properties`
+        // );
+
         const response = await axios.get(
-          "http://localhost:5000/api/properties"
-        );
+  `${import.meta.env.VITE_API_BASE_URL}/api/properties`
+);
+
+
         setProperties(response.data);
         setFilteredProperties(response.data);
       } catch (error) {
@@ -73,13 +83,10 @@ const PropertyListings = () => {
     navigate(`/PropertyDetails/${property._id}`);
   };
 
-
- const location = useLocation();
+  const location = useLocation();
 
   // This will be true when path is "/"
   const isHomePage = location.pathname === "/";
-
-
 
   return (
     <div className="container my-5">
@@ -104,11 +111,27 @@ const PropertyListings = () => {
                   <div className="card h-100 shadow-sm border-0">
                     <div className="position-relative">
                       <img
-                        src={
-                          property.imageUrls && property.imageUrls.length > 0
-                            ? `http://localhost:5000${property.imageUrls[0]}`
-                            : "https://via.placeholder.com/400x230?text=No+Image"
-                        }
+                        // src={
+                        //   property.imageUrls && property.imageUrls.length > 0
+                        //     ? `http://localhost:5000${property.imageUrls[0]}`
+                        //     : "https://via.placeholder.com/400x230?text=No+Image"
+                        // }
+
+
+// src={
+//   property.imageUrls && property.imageUrls.length > 0
+//     ? `${process.env.REACT_APP_API_BASE_URL}${property.imageUrls[0]}`
+//     : "https://via.placeholder.com/400x230?text=No+Image"
+// }
+
+
+src={
+  property.imageUrls && property.imageUrls.length > 0
+    ? `${import.meta.env.VITE_API_BASE_URL}${property.imageUrls[0]}`
+    : "https://via.placeholder.com/400x230?text=No+Image"
+}
+
+
                         className="card-img-top rounded-top-4"
                         alt={property.title || "Property Image"}
                         style={{ height: "230px", objectFit: "cover" }}
@@ -160,66 +183,64 @@ const PropertyListings = () => {
 
         {/* ADVANCED SEARCH */}
 
-{!isHomePage && (
-
-        <div className="col-md-3">
-          <div className="bg-info text-white p-3 rounded mb-4">
-            <h5 className="fw-bold">ADVANCED SEARCH</h5>
-            <form onSubmit={handleSearch}>
-              <input
-                type="text"
-                name="location"
-                value={searchFilters.location}
-                onChange={handleChange}
-                placeholder="Location"
-                className="form-control mb-2"
-              />
-              <input
-                type="text"
-                name="category"
-                value={searchFilters.category}
-                onChange={handleChange}
-                placeholder="Property Category"
-                className="form-control mb-2"
-              />
-              <input
-                type="text"
-                name="type"
-                value={searchFilters.type}
-                onChange={handleChange}
-                placeholder="Property Type"
-                className="form-control mb-2"
-              />
-              <div className="row mb-2">
-                <div className="col">
-                  <input
-                    type="number"
-                    name="minBeds"
-                    value={searchFilters.minBeds}
-                    onChange={handleChange}
-                    placeholder="Min Beds"
-                    className="form-control"
-                  />
+        {!isHomePage && (
+          <div className="col-md-3">
+            <div className="bg-info text-white p-3 rounded mb-4">
+              <h5 className="fw-bold">ADVANCED SEARCH</h5>
+              <form onSubmit={handleSearch}>
+                <input
+                  type="text"
+                  name="location"
+                  value={searchFilters.location}
+                  onChange={handleChange}
+                  placeholder="Location"
+                  className="form-control mb-2"
+                />
+                <input
+                  type="text"
+                  name="category"
+                  value={searchFilters.category}
+                  onChange={handleChange}
+                  placeholder="Property Category"
+                  className="form-control mb-2"
+                />
+                <input
+                  type="text"
+                  name="type"
+                  value={searchFilters.type}
+                  onChange={handleChange}
+                  placeholder="Property Type"
+                  className="form-control mb-2"
+                />
+                <div className="row mb-2">
+                  <div className="col">
+                    <input
+                      type="number"
+                      name="minBeds"
+                      value={searchFilters.minBeds}
+                      onChange={handleChange}
+                      placeholder="Min Beds"
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col">
+                    <input
+                      type="number"
+                      name="minBaths"
+                      value={searchFilters.minBaths}
+                      onChange={handleChange}
+                      placeholder="Min Baths"
+                      className="form-control"
+                    />
+                  </div>
                 </div>
-                <div className="col">
-                  <input
-                    type="number"
-                    name="minBaths"
-                    value={searchFilters.minBaths}
-                    onChange={handleChange}
-                    placeholder="Min Baths"
-                    className="form-control"
-                  />
-                </div>
-              </div>
-              <button type="submit" className="btn btn-warning w-100 fw-bold">
-                SEARCH
-              </button>
-            </form>
+                <button type="submit" className="btn btn-warning w-100 fw-bold">
+                  SEARCH
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-)}
-
+        )}
       </div>
     </div>
   );

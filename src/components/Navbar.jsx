@@ -223,7 +223,7 @@ const Navbar = () => {
             </li>
             {/* ------------------------ */}
 
-            {/* <li className="nav-item">
+          <li className="nav-item">
               <Link
                 className="nav-link fw-semibold"
                 to="/AdminPage"
@@ -231,7 +231,7 @@ const Navbar = () => {
               >
                 AdminPage
               </Link>
-            </li> */}
+            </li> 
 
             {/* <li className="nav-item">
               <Link
