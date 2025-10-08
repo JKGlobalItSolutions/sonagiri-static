@@ -12,19 +12,23 @@ const PropertyListingsHome = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const response = await axios.get("http://localhost:5000/api/properties");
-
-        // const response = await axios.get(
-        //   `${process.env.REACT_APP_API_BASE_URL}/api/properties`
-        // );
-
         const response = await axios.get(
           `${import.meta.env.VITE_API_BASE_URL}/api/properties`
         );
 
-        setProperties(response.data);
+        // Ensure response.data is an array
+        if (Array.isArray(response.data)) {
+          setProperties(response.data);
+        } else if (response.data && response.data.properties && Array.isArray(response.data.properties)) {
+          // Handle case where API returns { properties: [...] }
+          setProperties(response.data.properties);
+        } else {
+          console.error("API response is not an array:", response.data);
+          setProperties([]);
+        }
       } catch (error) {
         console.error("Error fetching properties:", error);
+        setProperties([]);
       } finally {
         setLoading(false);
       }
@@ -60,17 +64,7 @@ const PropertyListingsHome = () => {
                   <div className="card h-100 shadow-sm border-0">
                     <div className="position-relative">
                       <img
-                        // src={
-                        //   property.imageUrls?.length > 0
-                        //     ? `http://localhost:5000${property.imageUrls[0]}`
-                        //     : "https://via.placeholder.com/400x230?text=No+Image"
-                        // }
-
-                        // src={
-                        //   property.imageUrls?.length > 0
-                        //     ? `${process.env.REACT_APP_API_BASE_URL}${property.imageUrls[0]}`
-                        //     : "https://via.placeholder.com/400x230?text=No+Image"
-                        // }
+                       
 
                         src={
                           property.imageUrls?.length > 0

@@ -22,23 +22,28 @@ const PropertyListings = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const response = await axios.get(
-        //   "http://localhost:5000/api/properties"
-        // );
-
-        // const response = await axios.get(
-        //   `${process.env.REACT_APP_API_BASE_URL}/api/properties`
-        // );
-
         const response = await axios.get(
-  `${import.meta.env.VITE_API_BASE_URL}/api/properties`
-);
+          `${import.meta.env.VITE_API_BASE_URL}/api/properties`
+        );
 
+        // Ensure response.data is an array
+        let propertiesArray = [];
+        if (Array.isArray(response.data)) {
+          propertiesArray = response.data;
+        } else if (response.data && response.data.properties && Array.isArray(response.data.properties)) {
+          // Handle case where API returns { properties: [...] }
+          propertiesArray = response.data.properties;
+        } else {
+          console.error("API response is not an array:", response.data);
+          propertiesArray = [];
+        }
 
-        setProperties(response.data);
-        setFilteredProperties(response.data);
+        setProperties(propertiesArray);
+        setFilteredProperties(propertiesArray);
       } catch (error) {
         console.error("Error fetching properties:", error);
+        setProperties([]);
+        setFilteredProperties([]);
       } finally {
         setLoading(false);
       }

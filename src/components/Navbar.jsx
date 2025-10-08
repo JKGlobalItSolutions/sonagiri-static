@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import navlogo from "../assets/navlogo/logo2.jpg"; // ✅ import logo
+import navlogo from "../assets/navlogo/logo4.jpg"; // ✅ import logo
 
 const Navbar = () => {
   return (
@@ -14,8 +14,7 @@ const Navbar = () => {
             width="100px"
             className="d-inline-block align-text-top me-2 rounded-5"
           />
-          {/* Optional: Add text next to logo */}
-          {/* <span className="fw-bold">Your Company Name</span> */}
+
         </Link>
 
         <button
@@ -136,52 +135,7 @@ const Navbar = () => {
               </ul>
             </li>
 
-            {/* Support Dropdown */}
-            {/* <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle fw-semibold"
-                href="#"
-                id="supportDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                style={{ color: "#038A5E" }}
-              >
-                Support
-              </a>
-
-              <ul
-                className="dropdown-menu animated"
-                aria-labelledby="supportDropdown"
-              >
-                <li className="dropdown">
-                  <p></p>
-                  <Link className="dropdown-item" to="/Faqpage">
-                    FAQ
-                  </Link>
-                </li>
-                <li className="dropdown">
-                  <p></p>
-                  <Link className="dropdown-item" to="/testimonial/">
-                    Testimonial
-                  </Link>
-                </li>
-                <li className="dropdown">
-                  <p></p>
-                  <Link className="dropdown-item" to="/blog/">
-                    Blog
-                  </Link>
-                </li>
-                <li className="dropdown">
-                  <p></p>
-                  <Link className="dropdown-item" to="/career/">
-                    Career
-                  </Link>
-                </li>
-                
-              </ul>
-            </li> */}
-
+           
             <li className="nav-item">
               <Link
                 className="nav-link fw-semibold"
@@ -192,15 +146,6 @@ const Navbar = () => {
               </Link>
             </li>
 
-            {/* <li className="nav-item">
-              <Link
-                className="nav-link fw-semibold"
-                to="/pricing"
-                style={{ color: "#038A5E" }}
-              >
-                Pricing
-              </Link>
-            </li> */}
 
             <li className="nav-item">
               <Link
@@ -233,15 +178,7 @@ const Navbar = () => {
               </Link>
             </li> 
 
-            {/* <li className="nav-item">
-              <Link
-                className="nav-link fw-semibold"
-                to="/PropertyDetails"
-                style={{ color: "#038A5E" }}
-              >
-                PropertyDetails
-              </Link>
-            </li> */}
+            
 
             {/* Admin login */}
             <li className="nav-item">
